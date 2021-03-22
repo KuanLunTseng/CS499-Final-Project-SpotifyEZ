@@ -1,0 +1,170 @@
+webpackHotUpdate_N_E("pages/index",{
+
+/***/ "./components/Authorization.js":
+/*!*************************************!*\
+  !*** ./components/Authorization.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(module) {/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-dev-runtime */ "./node_modules/react/jsx-dev-runtime.js");
+/* harmony import */ var react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _store_actions_authAction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../store/actions/authAction */ "./store/actions/authAction.js");
+/* harmony import */ var _auth_Auth__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../auth/Auth */ "./auth/Auth.js");
+/* harmony import */ var universal_cookie__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! universal-cookie */ "./node_modules/universal-cookie/es6/index.js");
+
+
+var _jsxFileName = "C:\\Users\\zengg\\Desktop\\CS499\\final-project-team-10-SpotifyEZ\\components\\Authorization.js",
+    _this = undefined,
+    _s = $RefreshSig$();
+
+
+
+
+
+
+
+var Authorization = function Authorization() {
+  _s();
+
+  var cookies = new universal_cookie__WEBPACK_IMPORTED_MODULE_5__["default"]();
+  var dispatch = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"])();
+
+  var _useSelector = Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"])(function (state) {
+    return state.auth;
+  }),
+      accessToken = _useSelector.accessToken,
+      isAuthed = _useSelector.isAuthed; //console.log('Access Token === ', accessToken)
+
+
+  console.log('isAuthed === ', isAuthed);
+  Object(react__WEBPACK_IMPORTED_MODULE_1__["useEffect"])(function () {
+    var params = Object(_auth_Auth__WEBPACK_IMPORTED_MODULE_4__["getHashParams"])();
+    var accessToken = params.access_token;
+    var expiresIn = params.expires_in;
+    console.log('COOOOOOOOKIE', document.cookie);
+
+    if (accessToken) {
+      document.cookie = accessToken;
+      console.log('COOOOOOOOKIE', document.cookie);
+      cookies.set('ACESS_TOKEN', accessToken, {
+        path: '/'
+      });
+      cookies.set('IS_AUTHED', true, {
+        path: '/'
+      });
+      console.log('COOOOOOOOOOKIE, get', cookies.get('ACESS_TOKEN'));
+
+      if (document.cookie !== undefined) {
+        dispatch(Object(_store_actions_authAction__WEBPACK_IMPORTED_MODULE_3__["setAcessToken"])(document.cookie));
+      } else {
+        dispatch(Object(_store_actions_authAction__WEBPACK_IMPORTED_MODULE_3__["setAcessToken"])(accessToken));
+      } //dispatch(setExpiresIn(expiresIn))
+
+
+      dispatch(Object(_store_actions_authAction__WEBPACK_IMPORTED_MODULE_3__["setIsAuthed"])(true));
+    }
+
+    Object(_auth_Auth__WEBPACK_IMPORTED_MODULE_4__["removeHashParamsFromUrl"])();
+  }, []);
+  return /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("div", {
+    children: [/*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("button", {
+      onClick: function onClick() {
+        window.location = Object(_auth_Auth__WEBPACK_IMPORTED_MODULE_4__["getAuthorizeHref"])();
+      },
+      children: "Authentication"
+    }, void 0, false, {
+      fileName: _jsxFileName,
+      lineNumber: 46,
+      columnNumber: 7
+    }, _this), "// }", isAuthed === true && /*#__PURE__*/Object(react_jsx_dev_runtime__WEBPACK_IMPORTED_MODULE_0__["jsxDEV"])("h6", {
+      children: ["Acess Token :", accessToken]
+    }, void 0, true, {
+      fileName: _jsxFileName,
+      lineNumber: 54,
+      columnNumber: 9
+    }, _this)]
+  }, void 0, true, {
+    fileName: _jsxFileName,
+    lineNumber: 44,
+    columnNumber: 5
+  }, _this);
+};
+
+_s(Authorization, "Xlq9+J9HQaZD+x14ybHkljNcUDg=", false, function () {
+  return [react_redux__WEBPACK_IMPORTED_MODULE_2__["useDispatch"], react_redux__WEBPACK_IMPORTED_MODULE_2__["useSelector"]];
+});
+
+_c = Authorization;
+/* harmony default export */ __webpack_exports__["default"] = (Authorization);
+
+var _c;
+
+$RefreshReg$(_c, "Authorization");
+
+;
+    var _a, _b;
+    // Legacy CSS implementations will `eval` browser code in a Node.js context
+    // to extract CSS. For backwards compatibility, we need to check we're in a
+    // browser context before continuing.
+    if (typeof self !== 'undefined' &&
+        // AMP / No-JS mode does not inject these helpers:
+        '$RefreshHelpers$' in self) {
+        var currentExports = module.__proto__.exports;
+        var prevExports = (_b = (_a = module.hot.data) === null || _a === void 0 ? void 0 : _a.prevExports) !== null && _b !== void 0 ? _b : null;
+        // This cannot happen in MainTemplate because the exports mismatch between
+        // templating and execution.
+        self.$RefreshHelpers$.registerExportsForReactRefresh(currentExports, module.i);
+        // A module can be accepted automatically based on its exports, e.g. when
+        // it is a Refresh Boundary.
+        if (self.$RefreshHelpers$.isReactRefreshBoundary(currentExports)) {
+            // Save the previous exports on update so we can compare the boundary
+            // signatures.
+            module.hot.dispose(function (data) {
+                data.prevExports = currentExports;
+            });
+            // Unconditionally accept an update to this module, we'll check if it's
+            // still a Refresh Boundary later.
+            module.hot.accept();
+            // This field is set when the previous version of this module was a
+            // Refresh Boundary, letting us know we need to check for invalidation or
+            // enqueue an update.
+            if (prevExports !== null) {
+                // A boundary can become ineligible if its exports are incompatible
+                // with the previous exports.
+                //
+                // For example, if you add/remove/change exports, we'll want to
+                // re-execute the importing modules, and force those components to
+                // re-render. Similarly, if you convert a class component to a
+                // function, we want to invalidate the boundary.
+                if (self.$RefreshHelpers$.shouldInvalidateReactRefreshBoundary(prevExports, currentExports)) {
+                    module.hot.invalidate();
+                }
+                else {
+                    self.$RefreshHelpers$.scheduleUpdate();
+                }
+            }
+        }
+        else {
+            // Since we just executed the code for the module, it's possible that the
+            // new exports made it ineligible for being a boundary.
+            // We only care about the case when we were _previously_ a boundary,
+            // because we already accepted this update (accidental side effect).
+            var isNoLongerABoundary = prevExports !== null;
+            if (isNoLongerABoundary) {
+                module.hot.invalidate();
+            }
+        }
+    }
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node_modules/next/dist/compiled/webpack/harmony-module.js */ "./node_modules/next/dist/compiled/webpack/harmony-module.js")(module)))
+
+/***/ })
+
+})
+//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9fTl9FLy4vY29tcG9uZW50cy9BdXRob3JpemF0aW9uLmpzIl0sIm5hbWVzIjpbIkF1dGhvcml6YXRpb24iLCJjb29raWVzIiwiQ29va2llcyIsImRpc3BhdGNoIiwidXNlRGlzcGF0Y2giLCJ1c2VTZWxlY3RvciIsInN0YXRlIiwiYXV0aCIsImFjY2Vzc1Rva2VuIiwiaXNBdXRoZWQiLCJjb25zb2xlIiwibG9nIiwidXNlRWZmZWN0IiwicGFyYW1zIiwiZ2V0SGFzaFBhcmFtcyIsImFjY2Vzc190b2tlbiIsImV4cGlyZXNJbiIsImV4cGlyZXNfaW4iLCJkb2N1bWVudCIsImNvb2tpZSIsInNldCIsInBhdGgiLCJnZXQiLCJ1bmRlZmluZWQiLCJzZXRBY2Vzc1Rva2VuIiwic2V0SXNBdXRoZWQiLCJyZW1vdmVIYXNoUGFyYW1zRnJvbVVybCIsIndpbmRvdyIsImxvY2F0aW9uIiwiZ2V0QXV0aG9yaXplSHJlZiJdLCJtYXBwaW5ncyI6Ijs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7OztBQUFBO0FBQ0E7QUFDQTtBQUNBO0FBQ0E7O0FBRUEsSUFBTUEsYUFBYSxHQUFHLFNBQWhCQSxhQUFnQixHQUFNO0FBQUE7O0FBQzFCLE1BQU1DLE9BQU8sR0FBRyxJQUFJQyx3REFBSixFQUFoQjtBQUNBLE1BQU1DLFFBQVEsR0FBR0MsK0RBQVcsRUFBNUI7O0FBRjBCLHFCQUdRQywrREFBVyxDQUFDLFVBQUFDLEtBQUs7QUFBQSxXQUFJQSxLQUFLLENBQUNDLElBQVY7QUFBQSxHQUFOLENBSG5CO0FBQUEsTUFHbEJDLFdBSGtCLGdCQUdsQkEsV0FIa0I7QUFBQSxNQUdMQyxRQUhLLGdCQUdMQSxRQUhLLEVBSTFCOzs7QUFDQUMsU0FBTyxDQUFDQyxHQUFSLENBQVksZUFBWixFQUE2QkYsUUFBN0I7QUFJQUcseURBQVMsQ0FBQyxZQUFNO0FBQ2QsUUFBTUMsTUFBTSxHQUFHQyxnRUFBYSxFQUE1QjtBQUNBLFFBQU1OLFdBQVcsR0FBR0ssTUFBTSxDQUFDRSxZQUEzQjtBQUNBLFFBQU1DLFNBQVMsR0FBR0gsTUFBTSxDQUFDSSxVQUF6QjtBQUVBUCxXQUFPLENBQUNDLEdBQVIsQ0FBWSxjQUFaLEVBQTRCTyxRQUFRLENBQUNDLE1BQXJDOztBQUVBLFFBQUlYLFdBQUosRUFBaUI7QUFFZlUsY0FBUSxDQUFDQyxNQUFULEdBQWtCWCxXQUFsQjtBQUNBRSxhQUFPLENBQUNDLEdBQVIsQ0FBWSxjQUFaLEVBQTRCTyxRQUFRLENBQUNDLE1BQXJDO0FBRUFsQixhQUFPLENBQUNtQixHQUFSLENBQVksYUFBWixFQUEyQlosV0FBM0IsRUFBd0M7QUFBRWEsWUFBSSxFQUFFO0FBQVIsT0FBeEM7QUFDQXBCLGFBQU8sQ0FBQ21CLEdBQVIsQ0FBWSxXQUFaLEVBQXlCLElBQXpCLEVBQStCO0FBQUVDLFlBQUksRUFBRTtBQUFSLE9BQS9CO0FBQ0FYLGFBQU8sQ0FBQ0MsR0FBUixDQUFZLHFCQUFaLEVBQW1DVixPQUFPLENBQUNxQixHQUFSLENBQVksYUFBWixDQUFuQzs7QUFFQSxVQUFJSixRQUFRLENBQUNDLE1BQVQsS0FBb0JJLFNBQXhCLEVBQW1DO0FBQ2pDcEIsZ0JBQVEsQ0FBQ3FCLCtFQUFhLENBQUNOLFFBQVEsQ0FBQ0MsTUFBVixDQUFkLENBQVI7QUFDRCxPQUZELE1BRU87QUFDTGhCLGdCQUFRLENBQUNxQiwrRUFBYSxDQUFDaEIsV0FBRCxDQUFkLENBQVI7QUFDRCxPQWJjLENBY2Y7OztBQUNBTCxjQUFRLENBQUNzQiw2RUFBVyxDQUFDLElBQUQsQ0FBWixDQUFSO0FBQ0Q7O0FBQ0RDLDhFQUF1QjtBQUN4QixHQXpCUSxFQXlCTixFQXpCTSxDQUFUO0FBMkJBLHNCQUNFO0FBQUEsNEJBRUU7QUFDRSxhQUFPLEVBQUUsbUJBQU07QUFDYkMsY0FBTSxDQUFDQyxRQUFQLEdBQWtCQyxtRUFBZ0IsRUFBbEM7QUFDRCxPQUhIO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGFBRkYsVUFTSXBCLFFBQVEsS0FBSyxJQUFiLGlCQUNBO0FBQUEsa0NBQWtCRCxXQUFsQjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsYUFWSjtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsV0FERjtBQWdCRCxDQXBERDs7R0FBTVIsYTtVQUVhSSx1RCxFQUNpQkMsdUQ7OztLQUg5QkwsYTtBQXNEU0EsNEVBQWYiLCJmaWxlIjoic3RhdGljL3dlYnBhY2svcGFnZXMvaW5kZXguNTA2MDc1YmNlMjZhMWJhNDZhZjAuaG90LXVwZGF0ZS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZUVmZmVjdCB9IGZyb20gJ3JlYWN0J1xyXG5pbXBvcnQgeyB1c2VEaXNwYXRjaCwgdXNlU2VsZWN0b3IgfSBmcm9tICdyZWFjdC1yZWR1eCdcclxuaW1wb3J0IHsgc2V0QWNlc3NUb2tlbiwgc2V0RXhwaXJlc0luLCBzZXRJc0F1dGhlZCB9IGZyb20gJy4uL3N0b3JlL2FjdGlvbnMvYXV0aEFjdGlvbidcclxuaW1wb3J0IHsgZ2V0QXV0aG9yaXplSHJlZiwgZ2V0SGFzaFBhcmFtcywgcmVtb3ZlSGFzaFBhcmFtc0Zyb21VcmwgfSBmcm9tICcuLi9hdXRoL0F1dGgnXHJcbmltcG9ydCBDb29raWVzIGZyb20gJ3VuaXZlcnNhbC1jb29raWUnXHJcblxyXG5jb25zdCBBdXRob3JpemF0aW9uID0gKCkgPT4ge1xyXG4gIGNvbnN0IGNvb2tpZXMgPSBuZXcgQ29va2llc1xyXG4gIGNvbnN0IGRpc3BhdGNoID0gdXNlRGlzcGF0Y2goKVxyXG4gIGNvbnN0IHsgYWNjZXNzVG9rZW4sIGlzQXV0aGVkIH0gPSB1c2VTZWxlY3RvcihzdGF0ZSA9PiBzdGF0ZS5hdXRoKVxyXG4gIC8vY29uc29sZS5sb2coJ0FjY2VzcyBUb2tlbiA9PT0gJywgYWNjZXNzVG9rZW4pXHJcbiAgY29uc29sZS5sb2coJ2lzQXV0aGVkID09PSAnLCBpc0F1dGhlZClcclxuXHJcblxyXG5cclxuICB1c2VFZmZlY3QoKCkgPT4ge1xyXG4gICAgY29uc3QgcGFyYW1zID0gZ2V0SGFzaFBhcmFtcygpXHJcbiAgICBjb25zdCBhY2Nlc3NUb2tlbiA9IHBhcmFtcy5hY2Nlc3NfdG9rZW5cclxuICAgIGNvbnN0IGV4cGlyZXNJbiA9IHBhcmFtcy5leHBpcmVzX2luXHJcblxyXG4gICAgY29uc29sZS5sb2coJ0NPT09PT09PT0tJRScsIGRvY3VtZW50LmNvb2tpZSlcclxuXHJcbiAgICBpZiAoYWNjZXNzVG9rZW4pIHtcclxuXHJcbiAgICAgIGRvY3VtZW50LmNvb2tpZSA9IGFjY2Vzc1Rva2VuXHJcbiAgICAgIGNvbnNvbGUubG9nKCdDT09PT09PT09LSUUnLCBkb2N1bWVudC5jb29raWUpXHJcblxyXG4gICAgICBjb29raWVzLnNldCgnQUNFU1NfVE9LRU4nLCBhY2Nlc3NUb2tlbiwgeyBwYXRoOiAnLycgfSlcclxuICAgICAgY29va2llcy5zZXQoJ0lTX0FVVEhFRCcsIHRydWUsIHsgcGF0aDogJy8nIH0pXHJcbiAgICAgIGNvbnNvbGUubG9nKCdDT09PT09PT09PT0tJRSwgZ2V0JywgY29va2llcy5nZXQoJ0FDRVNTX1RPS0VOJykpXHJcblxyXG4gICAgICBpZiAoZG9jdW1lbnQuY29va2llICE9PSB1bmRlZmluZWQpIHtcclxuICAgICAgICBkaXNwYXRjaChzZXRBY2Vzc1Rva2VuKGRvY3VtZW50LmNvb2tpZSkpXHJcbiAgICAgIH0gZWxzZSB7XHJcbiAgICAgICAgZGlzcGF0Y2goc2V0QWNlc3NUb2tlbihhY2Nlc3NUb2tlbikpXHJcbiAgICAgIH1cclxuICAgICAgLy9kaXNwYXRjaChzZXRFeHBpcmVzSW4oZXhwaXJlc0luKSlcclxuICAgICAgZGlzcGF0Y2goc2V0SXNBdXRoZWQodHJ1ZSkpXHJcbiAgICB9XHJcbiAgICByZW1vdmVIYXNoUGFyYW1zRnJvbVVybCgpXHJcbiAgfSwgW10pXHJcblxyXG4gIHJldHVybiAoXHJcbiAgICA8ZGl2PlxyXG4gICAgICB7LyogeyBpc0F1dGhlZCA9PT0gZmFsc2UgJiYgKi99XHJcbiAgICAgIDxidXR0b25cclxuICAgICAgICBvbkNsaWNrPXsoKSA9PiB7XHJcbiAgICAgICAgICB3aW5kb3cubG9jYXRpb24gPSBnZXRBdXRob3JpemVIcmVmKClcclxuICAgICAgICB9fT5cclxuICAgICAgICBBdXRoZW50aWNhdGlvblxyXG4gICAgICAgIDwvYnV0dG9uPlxyXG4gICAgICAvLyB9XHJcbiAgICAgIHsgaXNBdXRoZWQgPT09IHRydWUgJiZcclxuICAgICAgICA8aDY+QWNlc3MgVG9rZW4gOnthY2Nlc3NUb2tlbn08L2g2PlxyXG4gICAgICB9XHJcblxyXG4gICAgPC9kaXY+XHJcbiAgKVxyXG59XHJcblxyXG5leHBvcnQgZGVmYXVsdCBBdXRob3JpemF0aW9uXHJcbiJdLCJzb3VyY2VSb290IjoiIn0=
